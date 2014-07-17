@@ -1,6 +1,7 @@
 body { 
 /*http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg*/
-background: url(http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg) no-repeat center center fixed;
+/*http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg*/
+background: url(https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg) no-repeat top center fixed;
 background-size: 100%;
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -8,14 +9,17 @@ background-size: 100%;
 background-size: cover;
 }
 
-
 #wrapper {
-padding: 10px;
 margin-left: auto;
 margin-right: auto;
-width: 700px;
+width: 800px;
 height: 100%;
 color: #ddd;
+
+}
+.to-the-top
+{
+	margin-top:-20px;
 }
 
 a:link {
@@ -28,13 +32,13 @@ a:visited {
 
 .background-image {
 position: fixed;
-margin-left: 240px;
+margin-left: auto;
 z-index: -1;
 display: block;
-background: url(http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg) no-repeat center center fixed;
+background: url(https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg) no-repeat top center fixed;
 
-width: 700px;
-height: 105%;
+width: 800px;
+height: 110%;
 
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -45,24 +49,35 @@ background-size: cover;
 -o-filter: blur(10px);
 -ms-filter: blur(10px);
 filter: blur(10px);
-left:-15px;
-right:-15px;
-top:-15px;
-bottom:-15px;
 }
 
 .dark
 {
-
+border-left-style: solid;
+border-right-style: solid;
+border-width: 1px;
 position: fixed;
 z-index: -1;
-width: 700px;
-height: 100%;
-margin-left: 240px;
-left: -15px;
-top: -15px;
-background-color: #484848;
-opacity: 0.9;
+width: 800px;
+height: 110%;
+margin-left: auto; /*24%*/
+background-color: rgba(34,34,34,0.75);
+opacity: 0.8;
+border-radius: 5px;
+
+}
+
+
+#name
+{
+
+}
+
+hr{
+	border-top-color: #fffff;
+	margin: -19px;
+	margin-top:25px;
+
 }
 
 .cust-div
@@ -71,9 +86,9 @@ overflow: hidden;
 }
 
 .content {
+	padding: 20px;
+	margin-top: 10px;
 left: 0;
 right: 0;
 z-index: 999;
-margin-left: 20px;
-margin-right: 20px;
 }

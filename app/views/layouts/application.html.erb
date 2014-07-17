@@ -6,13 +6,17 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body class="to-the-top">
 	<div id="wrapper">
 		<div class="background-image">
 
 		</div>
 		<div class="dark"></div>
 		<div class="content">
+			<div class="inner-content">
+				<center><h1>Drew Wetherington</h1></center>
+			</div>
+			<hr class="cust"/>
 			<%= yield %>
 		</div>
 	</div>
