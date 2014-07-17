@@ -1,14 +1,79 @@
-html { 
-  background: url(http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body { 
+/*http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg*/
+background: url(http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg) no-repeat center center fixed;
+background-size: 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
-.trans-main {
-	opacity: 0.8;
-	filter: alpha(opacity=80);
+
+#wrapper {
+padding: 10px;
+margin-left: auto;
+margin-right: auto;
+width: 700px;
+height: 100%;
+color: #ddd;
 }
 
-.container
+a:link {
+	color: #8EC1DA;
+}
+
+a:visited {
+	color: #8e9bda !important;
+}
+
+.background-image {
+position: fixed;
+margin-left: 240px;
+z-index: -1;
+display: block;
+background: url(http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg) no-repeat center center fixed;
+
+width: 700px;
+height: 105%;
+
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+-webkit-filter: blur(10px);
+-moz-filter: blur(10px);
+-o-filter: blur(10px);
+-ms-filter: blur(10px);
+filter: blur(10px);
+left:-15px;
+right:-15px;
+top:-15px;
+bottom:-15px;
+}
+
+.dark
+{
+
+position: fixed;
+z-index: -1;
+width: 700px;
+height: 100%;
+margin-left: 240px;
+left: -15px;
+top: -15px;
+background-color: #484848;
+opacity: 0.9;
+}
+
+.cust-div
+{
+overflow: hidden;
+}
+
+.content {
+left: 0;
+right: 0;
+z-index: 999;
+margin-left: 20px;
+margin-right: 20px;
+}
