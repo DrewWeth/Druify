@@ -1,0 +1,14 @@
+html { 
+  background: url(http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.trans-main {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.container
