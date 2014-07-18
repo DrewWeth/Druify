@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Druify</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'> -->
-	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-</head>
-<body class="to-the-top">
-<button class="arrow left" id="left-arrow">
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
-    <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-	45.63,75.8 0.375,38.087 45.63,0.375 "/>
-  </svg>  
-</button>
+	<head>
+		<title>Druify</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<!-- <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'> -->
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+	</head>
+	<body class="to-the-top">
+		<button class="arrow left" id="left-arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+				45.63,75.8 0.375,38.087 45.63,0.375 "/>
+			</svg>  
+		</button>
 
-<button class="arrow right" id="right-arrow">
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
-    <polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-	0.375,0.375 45.63,38.087 0.375,75.8 "/>
-  </svg>
-</button>
-	<div id="wrapper">
-		<div class="background-image">
-
-		</div>
-		<div class="dark"></div>
-		<div class="content">
-			<div class="inner-content">
-				<center><h1 id="name">Drew Wetherington</h1>
-					About | Blog | <%= link_to 'Github', 'https://github.com/DrewWeth' %> | <%= link_to 'Resume', 'https://pdf.yt/d/lQKF75Vvd0DdmJXg'  %></center>
-				</div>
-				<hr class="cust"/>
+		<button class="arrow right" id="right-arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
+				0.375,0.375 45.63,38.087 0.375,75.8 "/>
+			</svg>
+		</button>
+		<div id="wrapper">
+			<div class="background-image">
+			</div>
+			<div id="header">
+					<center><h1 id="name">Drew Wetherington</h1>
+							About | Blog | <%= link_to 'Github', 'https://github.com/DrewWeth' %> | <%= link_to 'Resume', 'https://pdf.yt/d/lQKF75Vvd0DdmJXg'  %>
+					</center>
+			</div>
+			<div class="dark">
 				<%= yield %>
-			
-				<hr class="cust"/>
-			
+			</div>
+			<div id="footer">
+			<div class="pull-right">
 				<a class="btn btn-social-icon btn-twitter">
 					<i class="fa fa-twitter"></i>
 				</a>
@@ -55,46 +52,47 @@
 				<a class="btn btn-social-icon btn-instagram">
 					<i class="fa fa-instagram"></i>
 				</a>
+				</div>
 			</div>
-
 		</div>
-
 		<script>
-		$('#left-arrow').click(function(){
-			var obj = $('.background-image').css('background-image');
-			var currentURL = obj.substring(obj.indexOf("(")+1, (obj.length-1));
-			console.log(currentURL);
-			var urls = [
-			"http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg", 
-			"https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg", 
-			"http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg"];
-			var i = $.inArray(currentURL, urls);
-			console.log(i);
-			console.log(urls.length);
-			if (i > 0 && i < urls.length)
-			{
-				$('.background-image').css({'background-image': 'url(' + urls[i-1] + ')'} );
-				$('body').css({'background-image': 'url(' + urls[i-1] + ')'});
-			}
-		});
+			$('#left-arrow').click(function(){
+				var obj = $('.background-image').css('background-image');
+				var currentURL = obj.substring(obj.indexOf("(")+1, (obj.length-1));
+					console.log(currentURL);
+					var urls = [
+					
+					"https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg", 
+					"http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg", 
+					"http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg"];
+					var i = $.inArray(currentURL, urls);
+					console.log(i);
+					console.log(urls.length);
+					if (i > 0 && i < urls.length)
+					{
+						$('.background-image').css({'background-image': 'url(' + urls[i-1] + ')'} );
+						$('body').css({'background-image': 'url(' + urls[i-1] + ')'});
+					}
+				});
 
-		$('#right-arrow').click(function(){
-			var obj = $('.background-image').css('background-image');
-			var currentURL = obj.substring(obj.indexOf("(")+1, (obj.length-1));
-			console.log(currentURL);
-			var urls = [
-			"http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg", 
-			"https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg", 
-			"http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg"];
-			var i = $.inArray(currentURL, urls);
-			console.log(i);
-			console.log(urls.length);
-			if (i >= 0 && i < urls.length-1)
-			{
-				$('.background-image').css({'background-image': 'url(' + urls[i+1] + ')'} );
-				$('body').css({'background-image': 'url(' + urls[i+1] + ')'});
-			}
-		});
+			$('#right-arrow').click(function(){
+				var obj = $('.background-image').css('background-image');
+				var currentURL = obj.substring(obj.indexOf("(")+1, (obj.length-1));
+					console.log(currentURL);
+					var urls = [
+					
+					"https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg", 
+					"http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg", 
+					"http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg"];
+					var i = $.inArray(currentURL, urls);
+					console.log(i);
+					console.log(urls.length);
+					if (i >= 0 && i < urls.length-1)
+					{
+						$('.background-image').css({'background-image': 'url(' + urls[i+1] + ')'} );
+						$('body').css({'background-image': 'url(' + urls[i+1] + ')'});
+					}
+				});
 		</script>
 	</body>
-	</html>
+</html>
