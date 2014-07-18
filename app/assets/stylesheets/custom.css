@@ -83,14 +83,13 @@ a:visited {
   margin-left: auto; /*24%*/
   margin-right: auto;
   background-color: rgba(34,34,34,0.75);
-
 }
 
 
 #name
 {
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size: 500%;
+font-family: 'UnifrakturMaguntia', cursive;
+font-size: 500%;
 }
 
 hr{
