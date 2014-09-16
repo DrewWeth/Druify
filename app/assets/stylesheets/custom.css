@@ -3,6 +3,7 @@ body {
   /*http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg*/
   background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
   background-size: 100%;
+  height: 100vh
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,9 +14,12 @@ body {
 margin-left: auto;
 margin-right: auto;
 width: 800px;
-height: 100%;
 color: #ddd;
 
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: rgba(44, 71, 47, 0.75);
 }
 
 a:link {
@@ -47,49 +51,53 @@ a:visited {
   filter: blur(10px);
 }
 
+input {
+
+  background-color: transparent;
+}
+
 #header
 {
-  margin-bottom: 1.5px;
-  padding:10px;
+  margin-bottom: 2px;
+  padding:20px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
   width: 800px;
-  height: 100%;
   margin-left: auto; /*24%*/
   margin-right: auto;
-  background-color: rgba(114, 191, 121, 0.75);
+  background-color: rgba(44, 71, 47, 0.75);
 }
 
 #footer
 {
-  padding:10px;
+  padding:20px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
   width: 800px;
-  height: 600px;
+  height: 500px;
+  overflow: hidden;
   margin-left: auto; /*24%*/
   margin-right: auto;
-  background-color: rgba(34,34,34,0.65);
+  background-color: rgba(34,34,34,0.85);
 }
 
 .dark
 {
-  margin-bottom: 1.5px;
-  padding:10px;
+  margin-bottom: 2px;
+  padding:20px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
   width: 800px;
-  height: 100%;
   margin-left: auto; /*24%*/
   margin-right: auto;
   background-color: rgba(34,34,34,0.85);
 }
 
 
-#name
+.name
 {
-  font-family: 'Lucida Grande Unicode', sans-serif;
-  font-weight:300;
+  font-family: 'Lucida', sans-serif;
+  font-weight:200;
   font-size: 12;
 }
 

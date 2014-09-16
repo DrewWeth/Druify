@@ -5,25 +5,34 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @is_admin = is_admin
+
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+   @is_admin = is_admin
+
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    restricted
   end
 
   # GET /posts/1/edit
   def edit
+    restricted
+
   end
 
   # POST /posts
   # POST /posts.json
   def create
+    restricted
+
     @post = Post.new(post_params)
 
     respond_to do |format|
@@ -40,6 +49,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    restricted
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -54,14 +65,37 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    if !is_admin
+      respond_to do |format|
+        format.html { redirect_to action: "index" }
+        format.js { head :ok }
+      end
+    else
+      @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
   private
+    def is_admin
+      if current_user != nil and current_user.id == 1
+        return true
+      else
+        return false
+      end
+    end
+
+    def restricted
+      if !is_admin
+        redirect_to action: "index"
+        return
+      end
+    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
@@ -69,6 +103,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :desc, :content, :url, :category)
     end
 end

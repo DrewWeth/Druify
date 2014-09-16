@@ -2,8 +2,14 @@
 
 one:
   title: MyString
-  body: MyString
+  desc: MyString
+  content: MyText
+  url: MyString
+  category: 1
 
 two:
   title: MyString
-  body: MyString
+  desc: MyString
+  content: MyText
+  url: MyString
+  category: 1

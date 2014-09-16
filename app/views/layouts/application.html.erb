@@ -10,7 +10,7 @@
 		<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 	</head>
-	<body class="to-the-top">
+	<body>
 		<button class="arrow left" id="left-arrow">
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
 				<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
@@ -24,33 +24,44 @@
 				0.375,0.375 45.63,38.087 0.375,75.8 "/>
 			</svg>
 		</button>
-		<div id="wrapper">
+		<div id="wrapper" class="name">
 			<div class="background-image">
 			</div>
 			<div id="header">
-					<center><h1 id="name">Drew Wetherington</h1>
-							About | Blog | <%= link_to 'Github', 'https://github.com/DrewWeth' %> | <%= link_to 'Resume', 'https://pdf.yt/d/lQKF75Vvd0DdmJXg'  %>
+					<center><h1><a style="color: #fff !important" href="<%= root_path %>">Drew Wetherington</a></h1>
+							<%= link_to 'Blog Posts', posts_path %> 
+							| <%= link_to 'Contact', accounts_path %> 
+							| <%= link_to 'Projects', projects_path %> 
+							| <% if current_user == nil %>
+								<%= link_to 'Login', new_user_session_path %>
+							  <% else %>
+							  	<%= link_to current_user.email, edit_user_registration_path %>
+							  <% end %>
 					</center>
 				</center>
 			</div>
 			<div class="dark">
+				<p><%= notice %></p>
+		    	<p><%= alert %></p>
+			
 				<%= yield %>
 			</div>
 			<div id="footer">
+			Visits <%= number_with_delimiter(@count, :delimeter => ',') %>
 			<div class="pull-right">
-				<a class="btn btn-social-icon btn-twitter">
+				<a class="btn btn-social-icon btn-twitter" href="https://twitter.com/DrewWeth">
 					<i class="fa fa-twitter"></i>
 				</a>
-				<a class="btn btn-social-icon btn-facebook">
+				<a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/drew.wetherington">
 					<i class="fa fa-facebook"></i>
 				</a>
-				<a class="btn btn-social-icon btn-github">
+				<a class="btn btn-social-icon btn-github" href="https://github.com/DrewWeth">
 					<i class="fa fa-github"></i>
 				</a>
-				<a class="btn btn-social-icon btn-google-plus">
+				<a class="btn btn-social-icon btn-google-plus" href="https://plus.google.com/u/0/113926987158062055829/posts">
 					<i class="fa fa-google-plus"></i>
 				</a>
-				<a class="btn btn-social-icon btn-instagram">
+				<a class="btn btn-social-icon btn-instagram" href="http://instagram.com/drewweth/">
 					<i class="fa fa-instagram"></i>
 				</a>
 				</div>
