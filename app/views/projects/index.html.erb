@@ -1,35 +1,27 @@
-<h1>Listing projects</h1>
+<h1>My Projects</h1>
+  <div class="row">
+    <% @projects.each_with_index do |project, index| %>
+      <div class="col-sm-4">
+      
+        <h4><%= project.name %><br><small><%= project.summary %></small></h4>
 
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Started</th>
-      <th>Summary</th>
-      <th>Desc</th>
-      <th>Img</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><a href="<%= project.url %>"><%= project.url %></a></td>
-        <td><%= project.started %></td>
-        <td><%= project.summary %></td>
-        <td><%= project.desc %></td>
-        <td><%= project.img %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <a href="<%= project.url %>" target="_blank" ><img class="img-responsive" alt="<%= project.name %>" src="<%= asset_path project.img %>"></img></a>
+        
+        <% if @is_admin %>
+          <br>
+          <%= link_to 'Show', project %>
+          <%= link_to 'Edit', edit_project_path(project) %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+      <% if (index+1) % 3 == 0 %>
+        </div>
+        <div class="row">
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+<% if @is_admin %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>
 
-<%= link_to 'New Project', new_project_path %>
