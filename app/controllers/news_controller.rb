@@ -60,11 +60,17 @@ class NewsController < ApplicationController
   # DELETE /news/1
   # DELETE /news/1.json
   def destroy
-    restricted
-    @news.destroy
-    respond_to do |format|
-      format.html { redirect_to news_index_url, notice: 'News was successfully destroyed.' }
-      format.json { head :no_content }
+    if !is_admin
+      respond_to do |format|
+        format.html { redirect_to action: "index" }
+        format.js { head :ok }
+      end
+    else
+      @news.destroy
+      respond_to do |format|
+        format.html { redirect_to news_index_url, notice: 'News was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
