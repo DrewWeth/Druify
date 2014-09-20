@@ -25,15 +25,18 @@ class TemplatesController < ApplicationController
   # GET /templates/new
   def new
     @template = Template.new
+    restricted
   end
 
   # GET /templates/1/edit
   def edit
+    restricted
   end
 
   # POST /templates
   # POST /templates.json
   def create
+    restricted
     @template = Template.new(template_params)
 
     respond_to do |format|
@@ -50,6 +53,7 @@ class TemplatesController < ApplicationController
   # PATCH/PUT /templates/1
   # PATCH/PUT /templates/1.json
   def update
+    restricted
     respond_to do |format|
       if @template.update(template_params)
         format.html { redirect_to @template, notice: 'Template was successfully updated.' }
@@ -64,6 +68,7 @@ class TemplatesController < ApplicationController
   # DELETE /templates/1
   # DELETE /templates/1.json
   def destroy
+    restricted
     @template.destroy
     respond_to do |format|
       format.html { redirect_to templates_url, notice: 'Template was successfully destroyed.' }
