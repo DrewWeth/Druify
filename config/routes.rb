@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :templates
+
+  resources :news
+
   root to: 'home#index'
   get 'home/resume', to: 'home#resume'
+  get 'templates/next/:id', to: 'templates#next'
 
   devise_for :users
   resources :posts

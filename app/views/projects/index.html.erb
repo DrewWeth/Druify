@@ -5,7 +5,8 @@
       
         <h4><%= project.name %><br><small><%= project.summary %></small></h4>
 
-        <a href="<%= project.url %>" target="_blank" ><img class="img-responsive" alt="<%= project.name %>" src="<%= asset_path project.img %>"></img></a>
+        <% if !project.url.empty? %>
+        <a href="<%= project.url %>" target="_blank" ><% end %><img class="img-responsive" alt="<%= project.name %>" src="<%= asset_path project.img %>"></img><% if !project.url.empty? %></a><% end %>
         
         <% if @is_admin %>
           <br>

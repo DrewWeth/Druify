@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916075837) do
+ActiveRecord::Schema.define(version: 20140920080612) do
 
   create_table "accounts", force: true do |t|
     t.string   "username"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20140916075837) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "host"
+  end
+
+  create_table "news", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.boolean  "archived"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
@@ -39,6 +47,17 @@ ActiveRecord::Schema.define(version: 20140916075837) do
     t.string   "summary"
     t.string   "desc"
     t.string   "img"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "templates", force: true do |t|
+    t.string   "bgUrl"
+    t.string   "accentColor"
+    t.string   "headerColor"
+    t.string   "linkColor"
+    t.string   "unvisitedLinkColor"
+    t.string   "darkClassColor"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

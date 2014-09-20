@@ -1,7 +1,22 @@
-	<h1>I'm Drew</h1><p>
-	This is where I've chosen to consolidate my internet presence, You can find all my blog posts, ways to connect, my side projects, and resume! I'm currently constructing this site. Check out the <%= link_to 'repo', 'https://github.com/DrewWeth/Druify/commits/master' %> for progress!
-	</p>
+<% @news.each_with_index do |n, i| %>
+	<% if i == 0 %>		
+		<h1><%= n.title %></h1>
+		<small class="news-datetime"><%= n.updated_at.strftime("%b %d, %Y at %I:%M") %></small>
+		<p><%= n.content.html_safe %></p>
+	<% else %>
+		</div>
+		<div class="dark">
+		<h1><%= n.title %></h1>
+		<small class="news-datetime"><%= n.updated_at.strftime("%b %d, %Y at %I:%M") %></small>
+		<p><%= n.content.html_safe %></p>
+
+	<% end %>
+<% end %> 
+
+	
+<!-- Always here -->
 </div>
 <div class="dark">
-	<h1>My Resume</h1>
-	<p>Check out my updated <%= link_to 'Resume', 'https://drive.google.com/file/d/0B-Trfe2hL-1OS0phWHhBelJHWkU/edit?usp=sharing' %></p>
+	<%= @html %>
+
+	

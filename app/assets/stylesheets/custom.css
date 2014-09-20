@@ -17,6 +17,17 @@ body {
   color: #ddd;
 }
 
+textarea {
+  background: transparent;
+}
+
+.news-datetime{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+}
+
 .contenthover { padding:20px 20px 10px 20px; }
 .contenthover, .contenthover h3, contenthover a { color:#fff; }
 .contenthover h3, .contenthover p { margin:0 0 10px 0; line-height:1.4em; padding:0; }
@@ -75,20 +86,24 @@ input {
 #footer
 {
   padding:20px;
+  padding-bottom: 40px;
   position: relative;
   z-index: 1;
   width: 800px;
-  min-height: 100%;
   overflow: hidden;
   margin-left: auto; /*24%*/
   margin-right: auto;
-  background-color: rgba(34,34,34,0.85);
+  background-color: rgba(34,34,34,1);
 }
 
 .dark
 {
   margin-bottom: 2px;
-  padding:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:20px;
+  padding-right:20px;
+
   position: relative;
   z-index: 1;
   width: 800px;

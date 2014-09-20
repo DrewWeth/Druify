@@ -15,6 +15,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'instagram', '~> 1.1.3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

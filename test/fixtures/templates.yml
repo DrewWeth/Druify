@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bgUrl: MyString
+  accentColor: MyString
+  headerColor: MyString
+  linkColor: MyString
+  unvisitedLinkColor: MyString
+  darkClassColor: MyString
+
+two:
+  bgUrl: MyString
+  accentColor: MyString
+  headerColor: MyString
+  linkColor: MyString
+  unvisitedLinkColor: MyString
+  darkClassColor: MyString
