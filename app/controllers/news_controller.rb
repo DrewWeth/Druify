@@ -4,7 +4,7 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @news = News.all
+    @news = News.take(3).(:order => "created_at DESC")
     @is_admin = is_admin
   end
 
