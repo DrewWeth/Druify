@@ -1,7 +1,7 @@
 body { 
   /*http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg*/
   /*http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg*/
-  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
+  /*background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;*/
   background-size: 100%;
   height: 100vh;
   -webkit-background-size: cover;
@@ -51,8 +51,8 @@ a:visited {
   margin-left: auto;
   z-index: -1;
   display: block;
-  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
-
+/*  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
+*/
   width: 800px;
   height: 100%;
 

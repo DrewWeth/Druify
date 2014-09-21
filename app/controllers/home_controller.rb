@@ -11,15 +11,19 @@ class HomeController < ApplicationController
 		end
 
 		@news = News.where(:archived => false).take(4)
+		begin
+			client = Instagram.client(:access_token => "190528179.56578d4.5959ac46941f40a788474cafb913791b")
+			user = client.user
 
-		client = Instagram.client(:access_token => "190528179.56578d4.5959ac46941f40a788474cafb913791b")
-		user = client.user
-		html = "<h1>Media Updates <small><a href='http://instagram.com/drewweth'>see more</a></small></h1>"
-		for media_item in client.user_recent_media(options = {"count" => "5"})
-			html << "<img src='#{media_item.images.thumbnail.url}'>"
+			html = "<h1>Media Updates <small><a href='http://instagram.com/drewweth'>see more</a></small></h1>"
+			for media_item in client.user_recent_media(options = {"count" => "5"})
+				html << "<img src='#{media_item.images.thumbnail.url}'>"
+			end
+			
+			@html = html.html_safe
+		rescue
 		end
-		@html = html.html_safe
-
+		
 	
 	end
 

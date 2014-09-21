@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  match "templates/prev" => "templates#prev", :via => :post
+  match "templates/next" => "templates#next", :via => :post
+  match "templates/curr" => "templates#curr", :via => :post
+
+
   resources :templates
 
   resources :news
 
   root to: 'home#index'
   get 'home/resume', to: 'home#resume'
-  get 'templates/next/:id', to: 'templates#next'
 
   devise_for :users
   resources :posts

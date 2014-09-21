@@ -2,6 +2,7 @@
 <table class="table table-responsive table-bordered table-condensed">
   <thead>
     <tr>
+    <th>ID</th>
       <th>Background URL</th>
       <th>Header</th>
       <th>Blocks</th>
@@ -12,6 +13,7 @@
   <tbody>
     <% @templates.each do |template| %>
       <tr>
+      <td><%= template.id %></td>
         <td><%= template.bgUrl %></td>
         <td><%= template.accentColor %></td>
         <td><%= template.darkClassColor %></td>
@@ -21,5 +23,6 @@
   </tbody>
 </table>
 <br>
-
-<%= link_to 'New Template', new_template_path %>
+<% if @is_admin %>
+  <%= link_to 'New Template', new_template_path %>
+<% end %>

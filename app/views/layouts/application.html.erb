@@ -10,7 +10,7 @@
 	<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="background: url(<%= @bg %>) no-repeat top center fixed">
 	<button class="arrow left" id="left-arrow">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
 			<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
@@ -25,7 +25,7 @@
 		</svg>
 	</button>
 	<div id="wrapper" class="name">
-		<div class="background-image">
+		<div class="background-image" style="background: url(<%= @bg %>) no-repeat top center fixed">
 		</div>
 		<div id="header">
 			<center><h1><a style="color: #fff !important" href="<%= root_path %>">Drew Wetherington</a></h1>
@@ -49,8 +49,7 @@
 		<%= yield %>
 	</div>
 	<div id="footer">
-			<button class="btn btn-small" style="border-color: #fff" id="next">Change Template!</button>
-			<%= link_to 'Make A Template', templates_path %>
+			<%= link_to 'Templates', templates_path %>
 
 
 			<div class="pull-right">
@@ -80,52 +79,37 @@
 
 <script>
 	$('#left-arrow').click(function(){
-		var obj = $('.background-image').css('background-image');
-		var currentURL = obj.substring(obj.indexOf("(")+1, (obj.length-1));
-			console.log(currentURL);
-			var urls = [
+		$.ajax({
+		url: 'templates/prev',
+		method: 'post',
 
-			"https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg", 
-			"http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg", 
-			"http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg"];
-			var i = $.inArray(currentURL, urls);
-			console.log(i);
-			console.log(urls.length);
-			if (i > 0 && i < urls.length)
+		}).done(function(jn){
+			if (jn["valid"])
 			{
-				$('.background-image').css({'background-image': 'url(' + urls[i-1] + ')'} );
-				$('body').css({'background-image': 'url(' + urls[i-1] + ')'});
+
+				var str = "url(" + jn.bgUrl + ") no-repeat top center fixed";
+				$('body').css('background', str);
+				$('.background-image').css('background', str);
+				console.log(jn);
+				$('#header').css('background-color', jn["headerColor"]);	
 			}
 		});
+	});
 
 	$('#right-arrow').click(function(){
-		var obj = $('.background-image').css('background-image');
-		var currentURL = obj.substring(obj.indexOf("(")+1, (obj.length-1));
-			console.log(currentURL);
-			var urls = [
-
-			"https://farm4.staticflickr.com/3916/14693953093_fae5ba62b3_o.jpg", 
-			"http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg", 
-			"http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg"];
-			var i = $.inArray(currentURL, urls);
-			console.log(i);
-			console.log(urls.length);
-			if (i >= 0 && i < urls.length-1)
-			{
-				$('.background-image').css({'background-image': 'url(' + urls[i+1] + ')'} );
-				$('body').css({'background-image': 'url(' + urls[i+1] + ')'});
-			}
-		});
-</script>
-
-<script>
-	$('#next').click(function(){
 		$.ajax({
-			url: 'templates/next/0',
+			url: 'templates/next',
+			method: 'post',
 
-		}).done(function(url){
-			var str = "url(" + url + ") no-repeat top center fixed";
-			$('body').css('background', str);
+		}).done(function(jn){
+			if (jn["valid"])
+			{
+				var str = "url(" + jn.bgUrl + ") no-repeat top center fixed";
+				$('body').css('background', str);
+				$('.background-image').css('background', str);
+				console.log(jn);
+				$('#header').css('background-color', jn["headerColor"]);
+			}
 		});
 	});
 </script>

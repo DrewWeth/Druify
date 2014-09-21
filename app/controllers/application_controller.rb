@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :set_default_params
 
   def set_default_params
+    session[:template] ||= 2 # Default
+    @bg = Template.find(session[:template]).bgUrl
+
+    puts "background is: " << @bg.to_s
+
   	util = Utility.take
   	util.visits += 1
   	util.save

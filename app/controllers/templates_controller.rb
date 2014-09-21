@@ -1,11 +1,6 @@
 class TemplatesController < ApplicationController
   before_action :set_template, only: [:show, :edit, :update, :destroy]
 
-  def next
-    # next_temp = params[:id].to_i + 1
-    temp = Template.offset(rand(Template.count)).first.bgUrl
-    render :text => temp
-  end
 
 
   # GET /templates
@@ -81,6 +76,38 @@ class TemplatesController < ApplicationController
       end
     end
   end
+
+
+
+  def prev
+    temp = Template.where(:id => (session[:template].to_i - 1)).first
+    puts "temp is: " << temp.to_s
+    if !temp.nil?
+      json = {
+        "valid" => true,
+        "bgUrl" => temp.bgUrl,
+        "headerColor" => temp.headerColor}
+      session[:template] = temp.id
+    else
+      json = {"valid" => false}
+    end
+    render :json => json
+  end
+
+  def next
+    temp = Template.where(:id => (session[:template].to_i + 1)).first
+    if !temp.nil?
+      json = {"valid" => true,
+        "bgUrl" => temp.bgUrl,
+        "headerColor" => temp.headerColor}
+      session[:template] = temp.id
+    else
+      json = {"valid" => false}
+    end
+    render :json => json
+  end
+
+
 
   private
     def is_admin
