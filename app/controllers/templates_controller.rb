@@ -7,7 +7,7 @@ class TemplatesController < ApplicationController
   # GET /templates.json
   def index
     @templates = Template.all
-
+    @curr_template = session[:template]
   end
 
   # GET /templates/1

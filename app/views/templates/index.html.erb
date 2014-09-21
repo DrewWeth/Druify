@@ -12,7 +12,12 @@
 
   <tbody>
     <% @templates.each do |template| %>
+      <% if template.id == @curr_template %>
+      <tr style="background-color: rgba(44, 71, 47, 0.75)">
+      <% else %>
       <tr>
+      <% end %>
+
       <td><%= template.id %></td>
         <td><%= template.bgUrl %></td>
         <td><%= template.accentColor %></td>
