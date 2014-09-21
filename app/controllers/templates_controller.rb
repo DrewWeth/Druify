@@ -78,7 +78,6 @@ class TemplatesController < ApplicationController
   end
 
 
-
   def prev
     temp = Template.where("id < ?", session[:template]).order("id DESC").first || Template.last
     puts "temp is: " << temp.to_s
