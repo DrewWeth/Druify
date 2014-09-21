@@ -80,7 +80,7 @@ class TemplatesController < ApplicationController
 
 
   def prev
-    temp = Template.where(:id => (session[:template].to_i - 1)).first
+    temp = Item.where("id < ?", session[:template]).order("id DESC").first || Item.last
     puts "temp is: " << temp.to_s
     if !temp.nil?
       json = {
@@ -95,7 +95,7 @@ class TemplatesController < ApplicationController
   end
 
   def next
-    temp = Template.where(:id => (session[:template].to_i + 1)).first
+    temp = Item.where("id > ?", session[:template]).order("id ASC").first || Item.first
     if !temp.nil?
       json = {"valid" => true,
         "bgUrl" => temp.bgUrl,
