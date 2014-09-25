@@ -1,7 +1,7 @@
 <h1>My Projects</h1>
   <div class="row">
     <% @projects.each_with_index do |project, index| %>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
       
         <h4><%= project.name %><br><small><%= project.summary %></small></h4>
 
@@ -15,7 +15,7 @@
           <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
       </div>
-      <% if (index+1) % 3 == 0 %>
+      <% if (index+1) % 4 == 0 %>
         </div>
         <div class="row">
       <% end %>

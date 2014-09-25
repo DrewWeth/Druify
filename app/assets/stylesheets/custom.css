@@ -13,7 +13,6 @@ body {
 #wrapper {
   margin-left: auto;
   margin-right: auto;
-  width: 960px;
   color: #ddd;
 }
 
@@ -63,7 +62,6 @@ a:visited {
   display: block;
 /*  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
 */
-  width: 960px;
   height: 100%;
 
   -webkit-background-size: cover;
@@ -87,7 +85,6 @@ input {
   padding:20px;
   position: relative;
   z-index: 1;
-  width: 960px;
   margin-left: auto; /*24%*/
   margin-right: auto;
   background-color: rgba(34,34,34, 0.90);
@@ -99,7 +96,6 @@ input {
   padding-bottom: 40px;
   position: relative;
   z-index: 1;
-  width: 960px;
   overflow: hidden;
   margin-left: auto; /*24%*/
   margin-right: auto;
@@ -116,7 +112,6 @@ input {
 
   position: relative;
   z-index: 1;
-  width: 960px;
   margin-left: auto; /*24%*/
   margin-right: auto;
   background-color: rgba(34,34,34,0.90);

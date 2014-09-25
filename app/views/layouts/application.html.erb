@@ -51,8 +51,8 @@
 <body>
 
 	<div id="wrapper" class="name" >
-		<div class="background-image">
-		</div>
+		<div class="container">
+
 			<div id="header" style="color: <%= @accent %>">
 				<button class="arrow left" id="left-arrow">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
@@ -86,8 +86,9 @@
 			<p><%= alert %></p>
 
 			<%= yield %>
-		
-	</div>
+
+		</div>
+
 	<div id="footer">
 		<%= link_to 'Templates', templates_path %>
 		<div class="pull-right footer-links">
@@ -113,6 +114,8 @@
 		Visits <%= number_with_delimiter(@count, :delimeter => ',') %>
 	</div>
 </div>
+	</div>
+
 </div>
 
 <script>
@@ -153,12 +156,12 @@
 		console.log(footer.position()); 
 		var footer_bottom = footer.position().top + footer.height();
 		var window_height = $(window).height() 
- 		if (footer_bottom < window_height)
- 		{
- 			$('.background-image').css('height', footer_bottom);
- 		}
- 		else
- 			console.log('false')
+		if (footer_bottom < window_height)
+		{
+			$('.background-image').css('height', footer_bottom);
+		}
+		else
+			console.log('false')
 	});
 
 	$(document).ready(function(){
