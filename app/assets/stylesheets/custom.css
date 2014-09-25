@@ -21,6 +21,11 @@ textarea {
   background: transparent;
 }
 
+.table-templates {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
 .news-datetime{
   position: absolute;
   top: 20px;

@@ -1,16 +1,15 @@
 <h1>Listing templates</h1>
-<table class="table table-responsive table-condensed">
+<table class="table table-templates table-responsive table-condensed">
   <thead>
     <tr>
       <th>ID</th>
       <th>Background URL</th>
       <th>Accent</th>
       <th>Blocks</th>
-      <th>Header Color</th>
+      <th>Header</th>
       <th>Unvisited</th>
       <th>Visited</th>
 
-      <th>Edit</th>
 
     </tr>
   </thead>
@@ -24,14 +23,14 @@
       <% end %>
 
         <td><%= template.id %></td>
-        <td><%= template.bgUrl %></td>
+        <td><%= link_to template.bgUrl, template %></td>
         <td><%= template.accentColor %></td>
         <td><%= template.darkClassColor %></td>
         <td><%= template.headerColor %></td>
         <td><%= template.linkColor %></td>
         <td><%= template.unvisitedLinkColor %></td>
 
-        <td><%= link_to 'Show', template %></td>
+        
       </tr>
     <% end %>
   </tbody>
