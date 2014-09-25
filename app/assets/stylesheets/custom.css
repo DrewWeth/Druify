@@ -184,11 +184,11 @@ svg {
 }
 
 .left {
-  left: -5%;
+  left: 4%;
 }
 
 .right {
-  left: 105%;
+  left: 96%;
 }
 
 .left:hover polyline,
