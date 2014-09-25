@@ -15,10 +15,11 @@ class HomeController < ApplicationController
 			client = Instagram.client(:access_token => "190528179.56578d4.5959ac46941f40a788474cafb913791b")
 			user = client.user
 
-			html = "<h1>Media Updates <small><a href='http://instagram.com/drewweth'>see more</a></small></h1>"
-			for media_item in client.user_recent_media(options = {"count" => "5"})
+			html = "<h1>Media Updates <small><a href='http://instagram.com/drewweth'>see more</a></small></h1><center>"
+			for media_item in client.user_recent_media(options = {"count" => "6"})
 				html << "<img src='#{media_item.images.thumbnail.url}'>"
 			end
+			html << "</center>"
 			
 			@html = html.html_safe
 		rescue

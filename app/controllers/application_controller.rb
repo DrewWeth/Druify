@@ -5,11 +5,23 @@ class ApplicationController < ActionController::Base
   before_action :set_default_params
 
   def set_default_params
+
+    # Bunch of templating stuff
     session[:template] ||= 2 # Default
-    @bg = Template.find(session[:template]).bgUrl
+    template = Template.find(session[:template])
+    @bg = template.bgUrl
+    @header_bg = template.headerColor
+    if !template.accentColor.blank?
+      @accent = template.accentColor
+    else
+      @accent = "transparent"
+    end
+    @linkColor = template.linkColor
+    @unvisitedLinkColor = template.unvisitedLinkColor
+    @block = template.darkClassColor
 
-    puts "background is: " << @bg.to_s
 
+    # Bump counter
   	util = Utility.take
   	util.visits += 1
   	util.save

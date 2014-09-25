@@ -8,6 +8,7 @@ class TemplatesController < ApplicationController
   def index
     @templates = Template.all
     @curr_template = session[:template]
+    @is_admin = is_admin
   end
 
   # GET /templates/1
@@ -15,7 +16,6 @@ class TemplatesController < ApplicationController
   def show
 
   end
-
 
   # GET /templates/new
   def new
@@ -98,7 +98,13 @@ class TemplatesController < ApplicationController
     if !temp.nil?
       json = {"valid" => true,
         "bgUrl" => temp.bgUrl,
-        "headerColor" => temp.headerColor}
+        "headerColor" => temp.headerColor,
+        "accentColor" => temp.accentColor,
+        "linkColor" => temp.linkColor,
+        "unvisitedLinkColor" => temp.unvisitedLinkColor,
+        "darkClassColor" => temp.darkClassColor,
+         
+      }
       session[:template] = temp.id
     else
       json = {"valid" => false}

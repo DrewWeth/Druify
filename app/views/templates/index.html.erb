@@ -1,33 +1,43 @@
 <h1>Listing templates</h1>
-<table class="table table-responsive table-bordered table-condensed">
+<table class="table table-responsive table-condensed">
   <thead>
     <tr>
-    <th>ID</th>
+      <th>ID</th>
       <th>Background URL</th>
-      <th>Header</th>
+      <th>Accent</th>
       <th>Blocks</th>
+      <th>Header Color</th>
+      <th>Unvisited</th>
+      <th>Visited</th>
+
       <th>Edit</th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @templates.each do |template| %>
       <% if template.id == @curr_template %>
-      <tr style="background-color: rgba(44, 71, 47, 0.75)">
+        <tr style="background-color: <% if !@accent.empty? %> <%= @accent %> <% else %> <%= @header_bg %> <% end %>">
       <% else %>
       <tr>
       <% end %>
 
-      <td><%= template.id %></td>
+        <td><%= template.id %></td>
         <td><%= template.bgUrl %></td>
         <td><%= template.accentColor %></td>
         <td><%= template.darkClassColor %></td>
+        <td><%= template.headerColor %></td>
+        <td><%= template.linkColor %></td>
+        <td><%= template.unvisitedLinkColor %></td>
+
         <td><%= link_to 'Show', template %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
+
 <% if @is_admin %>
   <%= link_to 'New Template', new_template_path %>
 <% end %>

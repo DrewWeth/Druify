@@ -13,7 +13,7 @@ body {
 #wrapper {
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
+  width: 960px;
   color: #ddd;
 }
 
@@ -28,22 +28,27 @@ textarea {
 
 }
 
+.footer-links > a:link {
+  color: #fff !important;
+}
+
+ .footer-links > a:visited {
+  color: #eee !important;
+}
+
 .contenthover { padding:20px 20px 10px 20px; }
 .contenthover, .contenthover h3, contenthover a { color:#fff; }
 .contenthover h3, .contenthover p { margin:0 0 10px 0; line-height:1.4em; padding:0; }
 .contenthover a.mybutton { display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .contenthover a.mybutton:hover { background:#34742d }
 
-.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
-  background-color: rgba(44, 71, 47, 0.75);
-}
 
 a:link {
 	color: #8EC1DA;
 }
 
 a:visited {
-	color: #8e9bda !important;
+	color: #8e9bda;
 }
 
 .background-image {
@@ -53,7 +58,7 @@ a:visited {
   display: block;
 /*  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
 */
-  width: 800px;
+  width: 960px;
   height: 100%;
 
   -webkit-background-size: cover;
@@ -77,10 +82,10 @@ input {
   padding:20px;
   position: relative;
   z-index: 1;
-  width: 800px;
+  width: 960px;
   margin-left: auto; /*24%*/
   margin-right: auto;
-  background-color: rgba(44, 71, 47, 0.75);
+  background-color: rgba(34,34,34, 0.90);
 }
 
 #footer
@@ -89,7 +94,7 @@ input {
   padding-bottom: 40px;
   position: relative;
   z-index: 1;
-  width: 800px;
+  width: 960px;
   overflow: hidden;
   margin-left: auto; /*24%*/
   margin-right: auto;
@@ -106,10 +111,10 @@ input {
 
   position: relative;
   z-index: 1;
-  width: 800px;
+  width: 960px;
   margin-left: auto; /*24%*/
   margin-right: auto;
-  background-color: rgba(34,34,34,0.85);
+  background-color: rgba(34,34,34,0.90);
 }
 
 
@@ -174,16 +179,16 @@ svg {
 }
 
 .left {
-  left: 10%;
+  left: -5%;
 }
 
 .right {
-  left: 90%;
+  left: 105%;
 }
 
 .left:hover polyline,
 .left:focus polyline {
-  stroke-width: 3;
+  stroke-width: 4;
 }
 
 .left:active polyline {
@@ -193,7 +198,7 @@ svg {
 
 .right:hover polyline,
 .right:focus polyline {
-  stroke-width: 3;
+  stroke-width: 4;
 }
 
 .right:active polyline {
