@@ -15,7 +15,7 @@
       <tr>
         <td><%= account.username %></td>
         <td><%= account.host %></td>
-        <td><%= account.url %></td>
+        <td><a href="<%= account.url %>"><%= account.url %></a></td>
         <td><%= account.desc %></td>
         <% if @is_admin %>
         <td><%= link_to 'Show', account %></td>
