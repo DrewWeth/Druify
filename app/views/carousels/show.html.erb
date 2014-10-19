@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Controller name:</strong>
+  <%= @carousel.controller_name %>
+</p>
+
+<p>
+  <strong>Image link:</strong>
+  <%= @carousel.image_link %>
+</p>
+
+<p>
+  <strong>Image asset link:</strong>
+  <%= @carousel.image_asset_link %>
+</p>
+
+<p>
+  <strong>Main text:</strong>
+  <%= @carousel.main_text %>
+</p>
+
+<p>
+  <strong>Sub text:</strong>
+  <%= @carousel.sub_text %>
+</p>
+
+<%= link_to 'Edit', edit_carousel_path(@carousel) %> |
+<%= link_to 'Back', carousels_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920080612) do
+ActiveRecord::Schema.define(version: 20140928061819) do
 
   create_table "accounts", force: true do |t|
     t.string   "username"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20140920080612) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "host"
+  end
+
+  create_table "carousels", force: true do |t|
+    t.string   "controller_name"
+    t.string   "image_link"
+    t.string   "image_asset_link"
+    t.string   "main_text"
+    t.string   "sub_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "news", force: true do |t|

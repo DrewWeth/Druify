@@ -1,43 +1,83 @@
-body { 
-  /*http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg*/
-  /*http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg*/
-  /*background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;*/
-  background-size: 100%;
-  height: 100vh;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+/* BOOTSTRAP 3.x GLOBAL STYLES
+-------------------------------------------------- */
+body {
+  color: #5a5a5a;
+  font-weight:300;
 }
 
-#wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  color: #ddd;
-}
 
-textarea {
-  background: transparent;
-}
 
-.table-templates {
-  table-layout: fixed;
-  word-wrap: break-word;
-}
 
-.news-datetime{
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
   position: absolute;
-  top: 20px;
-  right: 20px;
-
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
-.footer-links > a:link {
-  color: #fff !important;
+.img-showcase{
+  height:inherit;
+  width:100%;
 }
 
- .footer-links > a:visited {
-  color: #eee !important;
+.projects_showcase{
+  /*margin-left:-2px;
+  margin-right:-2px;*/
+
+  margin-left:0px;
+  margin-right:0px;
+}
+
+.btn-trans{
+  color:#fff;
+  background-color:transparent;
+  border-color:#eee
+}
+
+.btn-trans:hover,.btn-trans:focus,.btn-trans:active,.btn-trans.active,.open>.dropdown-toggle.btn-trans {
+  color:#5a5a5a;
+  background-color:#fff;
+  border-color:#fff;
+  }
+
+.projects_showcase > div {
+  background: #eee;
+  border: 0px solid transparent;
+  height:400px;
+  margin-left:0px;
+  margin-right:0px;
+  padding-left:0px;
+  padding-right:0px;
+}
+
+.text-thin{
+  font-weight:200;
+}
+
+#showcase > div {
+  background: #eee;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.navbar-active{
+  font-weight:600;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+.navbar-inverse{
+  border-color: transparent;
 }
 
 .contenthover { padding:20px 20px 10px 20px; }
@@ -46,166 +86,130 @@ textarea {
 .contenthover a.mybutton { display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .contenthover a.mybutton:hover { background:#34742d }
 
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
 
-a:link {
-	color: #8EC1DA;
+/* Carousel base class */
+.carousel {
+  /*padding-bottom: 15px;*/
 }
-
-a:visited {
-	color: #8e9bda;
-}
-
-.background-image {
-  position: fixed;
-  margin-left: auto;
-  z-index: -1;
-  display: block;
-/*  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
-*/
-  height: 100%;
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
-}
-
-input {
-  background-color: transparent;
-}
-
-#header
-{
-  margin-bottom: 2px;
-  padding:20px;
-  position: relative;
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
   z-index: 1;
-  margin-left: auto; /*24%*/
-  margin-right: auto;
-  background-color: rgba(34,34,34, 0.90);
 }
 
-#footer
-{
-  padding:20px;
-  padding-bottom: 40px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  margin-left: auto; /*24%*/
-  margin-right: auto;
-  background-color: rgba(34,34,34,1);
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background-color:#555;
 }
-
-.dark
-{
-  margin-bottom: 2px;
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left:20px;
-  padding-right:20px;
-
-  position: relative;
-  z-index: 1;
-  margin-left: auto; /*24%*/
-  margin-right: auto;
-  background-color: rgba(34,34,34,0.90);
-}
-
-
-.name
-{
-  font-family: 'Lucida', sans-serif;
-  font-weight:200;
-  font-size: 12;
-}
-
-hr{
-	border-top-color: #fffff;
-	margin: -20px;
-	margin-top:10px;
-	margin-bottom: 10px;
-  background-color: transparent;
-}
-
-h1
-{
-	font-family: 'Lobster', cursive;
-}
-
-.cust-div
-{
-overflow: hidden;
-}
-
-
-
-
-
-/*
-New stuff
-*/
-
-*{
-  margin: 0;
-  padding: 0;
-}
-
-
-button {
-  -webkit-appearance: none;
-  background: transparent;
-  border: 0;
-  outline:0;
-}
-
-svg {
-  padding: 5px;
-}
-
-.arrow {
-  cursor: pointer;
+.carousel img {
   position: absolute;
-  top: 50%;
-  margin-top: -45px;
-  margin-left: -35px;
-  width: 70px;
-  height: 90px;
+  top: 0;
+  left: 0;
+  min-height: 400px;
 }
 
-.left {
-  left: 4%;
+.carousel-indicators{
+  left:92%;
 }
 
-.right {
-  left: 96%;
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.left:hover polyline,
-.left:focus polyline {
-  stroke-width: 4;
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.left:active polyline {
-  stroke-width: 6;
-  transition: all 100ms ease-in-out;
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
 }
 
-.right:hover polyline,
-.right:focus polyline {
-  stroke-width: 4;
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
 }
 
-.right:active polyline {
-  stroke-width: 6;
-  transition: all 100ms ease-in-out;
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
 }
 
-polyline {
-  transition: all 250ms ease-in-out;
+footer{
+  /*margin-top: 10px;*/
+
+}
+
+.footer-shaded{
+    background: #777777;
+    padding: 50px;
+    color: #fff;
+    padding-bottom: 20px;
+
+}
+.footer-shaded a{
+  color: #eee;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remve the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  }
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
 }

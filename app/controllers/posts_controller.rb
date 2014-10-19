@@ -1,12 +1,22 @@
+require 'blogger'
+require 'net/http'
+
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
+
     @posts = Post.all
     @is_admin = is_admin
-
+    begin
+      response = HTTParty.get('https://www.googleapis.com/blogger/v3/blogs/6736525613745104618?key=AIzaSyAdv2hpDnVGqgUzsOhXVCOWrRM0VUJ1Pfs')
+      posts = HTTParty.get('https://www.googleapis.com/blogger/v3/blogs/6736525613745104618/posts?key=AIzaSyAdv2hpDnVGqgUzsOhXVCOWrRM0VUJ1Pfs')
+      @story = posts["items"]
+    rescue
+      @story = []
+    end
   end
 
   # GET /posts/1

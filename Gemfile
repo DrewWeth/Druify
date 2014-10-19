@@ -15,6 +15,9 @@ group :production do
   gem 'pg'
 end
 
+gem 'httparty'
+
+
 gem 'instagram', '~> 1.1.3'
 
 # Use SCSS for stylesheets
@@ -42,6 +45,7 @@ gem 'devise'
 gem 'cancan'
 gem 'rolify'
 
+gem 'blogger', '~> 0.5.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

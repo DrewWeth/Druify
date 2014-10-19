@@ -1,35 +1,30 @@
-<h1>Listing posts</h1>
+<div class="row">
+  <div class="col-sm-9">
+    <div id ="story">
+      <% @story.each do |p| %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Desc</th>
-      <th>Content</th>
-      <th>Url</th>
-      <th>Category</th>
-    </tr>
-  </thead>
+        <%= link_to p["title"], p["url"] %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.desc %></td>
-        <td><%= post.content %></td>
-        <td><a href="<%= post.url %>"><%= post.url %></a></td>
-        <td><%= post.category %></td>
-        <% if @is_admin %>
-        <td><%= link_to 'Show', post %>
-        <%= link_to 'Edit', edit_post_path(post) %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <span class="pull-right"><%= p["updated"] %></span>
+        <%= p["content"].html_safe %>
+
+        <hr>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-3" style="border-left-style: solid; border-left-width:1px;border-left-color: #eee">
+    <h1 class="text-thin">Posts</h1>
+    <ul class="list-group">
+      <% @story.each do |p| %>
+      <li class="list-group-item">
+        <%= link_to p["title"], p["url"] %>
+
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </ul>
 
-<br>
-<% if @is_admin %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
+      <br>
+      <% if @is_admin %>
+      <%= link_to 'New Post', new_post_path %>
+      <% end %>
+    </div>
+  </div>

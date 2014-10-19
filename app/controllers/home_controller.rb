@@ -3,14 +3,18 @@ class HomeController < ApplicationController
 	# GET /accounts.json
 	def index
 
-	  	Instagram.configure do |config|
+
+  	Instagram.configure do |config|
 		  config.client_id = "56578d4451c74ba0964665d5d7fafbed"
 		  config.client_secret = "b8e818b92dbe43f7a7725deafde83929"
 		  # For secured endpoints only
 		  #config.client_ips = '<Comma separated list of IPs>'
 		end
 
+
+
 		@news = News.where(:archived => false).take(4)
+
 		begin
 			client = Instagram.client(:access_token => "190528179.56578d4.5959ac46941f40a788474cafb913791b")
 			user = client.user
@@ -20,12 +24,12 @@ class HomeController < ApplicationController
 				html << "<img src='#{media_item.images.thumbnail.url}'>"
 			end
 			html << "</center>"
-			
+
 			@html = html.html_safe
 		rescue
 		end
-		
-	
+
+
 	end
 
 

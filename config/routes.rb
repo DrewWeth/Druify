@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :carousels
+
   match "templates/prev" => "templates#prev", :via => :post
   match "templates/next" => "templates#next", :via => :post
   match "templates/curr" => "templates#curr", :via => :post

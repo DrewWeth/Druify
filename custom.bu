@@ -1,0 +1,211 @@
+body { 
+  /*http://wallpaperpanda.com/wallpapers/acd/B7A/acdB7Akji.jpg*/
+  /*http://www.lcaid.com/images/full/2013/04/27/wallpapers-forrest-gump-japanese-art-hd-x_forrest-gump-japanese-art-hd-137820.jpg*/
+  /*background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;*/
+  background-size: 100%;
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  color: #ddd;
+}
+
+textarea {
+  background: transparent;
+}
+
+.table-templates {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.news-datetime{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+}
+
+.footer-links > a:link {
+  color: #fff !important;
+}
+
+ .footer-links > a:visited {
+  color: #eee !important;
+}
+
+.contenthover { padding:20px 20px 10px 20px; }
+.contenthover, .contenthover h3, contenthover a { color:#fff; }
+.contenthover h3, .contenthover p { margin:0 0 10px 0; line-height:1.4em; padding:0; }
+.contenthover a.mybutton { display:block; float:left; padding:5px 10px; background:#3c9632; color:#fff; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.contenthover a.mybutton:hover { background:#34742d }
+
+
+a:link {
+	color: #8EC1DA;
+}
+
+a:visited {
+	color: #8e9bda;
+}
+
+.background-image {
+  position: fixed;
+  margin-left: auto;
+  z-index: -1;
+  display: block;
+/*  background: url(http://www.dotwallpapers.com/wp-content/uploads/wallpapers/Computer/Mystery-Bridge-Desktop-Wallpaper.jpg) no-repeat top center fixed;
+*/
+  height: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+input {
+  background-color: transparent;
+}
+
+#header
+{
+  margin-bottom: 2px;
+  padding:20px;
+  position: relative;
+  z-index: 1;
+  margin-left: auto; /*24%*/
+  margin-right: auto;
+  background-color: rgba(34,34,34, 0.90);
+}
+
+#footer
+{
+  padding:20px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-left: auto; /*24%*/
+  margin-right: auto;
+  background-color: rgba(34,34,34,1);
+}
+
+.dark
+{
+  margin-bottom: 2px;
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:20px;
+  padding-right:20px;
+
+  position: relative;
+  z-index: 1;
+  margin-left: auto; /*24%*/
+  margin-right: auto;
+  background-color: rgba(34,34,34,0.90);
+}
+
+
+.name
+{
+  font-family: 'Lucida', sans-serif;
+  font-weight:200;
+  font-size: 12;
+}
+
+hr{
+	border-top-color: #fffff;
+	margin: -20px;
+	margin-top:10px;
+	margin-bottom: 10px;
+  background-color: transparent;
+}
+
+h1
+{
+	font-family: 'Lobster', cursive;
+}
+
+.cust-div
+{
+overflow: hidden;
+}
+
+
+
+
+
+/*
+New stuff
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline:0;
+}
+
+svg {
+  padding: 5px;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -45px;
+  margin-left: -35px;
+  width: 70px;
+  height: 90px;
+}
+
+.left {
+  left: 4%;
+}
+
+.right {
+  left: 96%;
+}
+
+.left:hover polyline,
+.left:focus polyline {
+  stroke-width: 4;
+}
+
+.left:active polyline {
+  stroke-width: 6;
+  transition: all 100ms ease-in-out;
+}
+
+.right:hover polyline,
+.right:focus polyline {
+  stroke-width: 4;
+}
+
+.right:active polyline {
+  stroke-width: 6;
+  transition: all 100ms ease-in-out;
+}
+
+polyline {
+  transition: all 250ms ease-in-out;
+}

@@ -4,174 +4,145 @@
 	<title>Druify</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'> -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" href="<%=asset_path "logo.png" %>">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.3/trianglify.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
-	<style>
 
-		#header {
-			background-color: <%= @header_bg %>;
-		}
-
-		body {
-			<% if @bg.include? "http" %>
-			background: url(<%= @bg %>) no-repeat center center fixed;
-			<% else %>
-			background: <%= @bg %>;
-			<% end %>
-		}
-
-		.background-image{
-			<% if @bg.include? "http" %>
-			background: url(<%= @bg %>) no-repeat center center fixed;
-			<% else %>
-			background: <%= @bg %>;
-			<% end %>
-		}
-		.dark {
-			background-color: <%= @block %>;
-		}
-
-		a:link {
-			color: <%= @linkColor %> !important;
-		}
-
-		a:visited {
-			color: <%= @unvisitedLinkColor %> !important;
-		}
-
-		.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
-			background-color: <%= @accent %>;
-		}
-	</style>
 </head>
 <body>
+	<div id="myCarousel" class="carousel slide">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active" style="height:400px">
+				<img src="" class="img-responsive">
+				<div class="container">
+					<div class="carousel-caption">
+						<h1 style="margin-bottom:10px"><%= @header_bg %></h1>
+						<pthis is="" an="" example="" layout="" with="" carousel="" that="" uses="" the="" bootstrap="" 3="" styles.<="" small="">
+							<p class="text-thin">View some of my projects</p>
+								<a class="btn btn-large btn-trans" href="<%= projects_path %>">See More</a></p>
 
-	<div id="wrapper" class="name" >
-		<div class="container">
+						</pthis></div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="">
+					<div class="container">
+						<div class="carousel-caption">
+							<p class="text-thin">Read technical and personal blog posts</p>
+							<a class="btn btn-large btn-trans" href="<%= posts_path %>">Read More</a></p>
 
-			<div id="header" style="color: <%= @accent %>">
-				<button class="arrow left" id="left-arrow">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
-						<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-						45.63,75.8 0.375,38.087 45.63,0.375 "/>
-					</svg>  
-				</button>
-
-				<button class="arrow right" id="right-arrow">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
-						<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
-						0.375,0.375 45.63,38.087 0.375,75.8 "/>
-					</svg>
-				</button>
-				<center><h1><a style="color: #fff !important" href="<%= root_path %>">Drew Wetherington</a></h1>
-					<%= link_to 'Projects', projects_path %> 
-
-					| <%= link_to 'Blog Posts', posts_path %> 
-					| <%= link_to 'Acounts', accounts_path %> 
-					| <%= link_to 'News', news_index_path %>
-					| <% if current_user == nil %>
-					<%= link_to 'Login', new_user_session_path %>
-					<% else %>
-					<%= link_to current_user.email, edit_user_registration_path %>
-					<% end %>
-				</center>
-			</center>
-		</div>
-		<div class="dark">
-			<p><%= notice %></p>
-			<p><%= alert %></p>
-
-			<%= yield %>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</div>
-
-	<div id="footer">
-		<%= link_to 'Templates', templates_path %>
-		<div class="pull-right footer-links">
-			<a class="btn btn-social-icon btn-twitter" href="https://twitter.com/DrewWeth">
-				<i class="fa fa-twitter"></i>
-			</a>
-			<a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/drew.wetherington">
-				<i class="fa fa-facebook"></i>
-			</a>
-			<a class="btn btn-social-icon btn-github" href="https://github.com/DrewWeth">
-				<i class="fa fa-github"></i>
-			</a>
-			<a class="btn btn-social-icon btn-google-plus" href="https://plus.google.com/u/0/113926987158062055829/posts">
-				<i class="fa fa-google-plus"></i>
-			</a>
-			<a class="btn btn-social-icon btn-instagram" href="http://instagram.com/drewweth/">
-				<i class="fa fa-instagram"></i>
-			</a>
-			<br>
-		</div>
-		<br>
-		<br>
-		Visits <%= number_with_delimiter(@count, :delimeter => ',') %>
-	</div>
-</div>
-	</div>
-
-</div>
-
-<script>
-	function apply_changes(jn){
-		location.reload();
-		console.log(jn);
-	}
-
-	$('#left-arrow').click(function(){
-		$.ajax({
-			url: 'templates/prev',
-			method: 'post',
-
-		}).done(function(jn){
-			if (jn["valid"])
-			{
-				apply_changes(jn);
-			}
-		});
-	});
-
-	$('#right-arrow').click(function(){
-		$.ajax({
-			url: 'templates/next',
-			method: 'post',
-
-		}).done(function(jn){
-			if (jn["valid"])
-			{
-				apply_changes(jn);
-			}
-		});
-	});
-</script>
-<script>
-	$(document).ready(function(){
-		var footer = $('#footer');
-		console.log(footer.position()); 
-		var footer_bottom = footer.position().top + footer.height();
-		var window_height = $(window).height() 
-		if (footer_bottom < window_height)
-		{
-			$('.background-image').css('height', footer_bottom);
+		<style>
+		.navbar-inverse .navbar-nav>a{
+			color:#2C2727;
 		}
-		else
-			console.log('false')
-	});
+		</style>
 
+		<div class="navbar-wrapper">
+			<div class="container">
+				<div class="navbar navbar-inverse navbar-static-top" style="background-color:#A9A9A9; margin-top:10px;padding-left:20px">
+					<div class="navbar-header">
+						<a class="navbar-toggle" data-toggle=  "collapse" data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<% if params[:controller] == 'home' %>
+						<%= link_to 'Druify', root_path, { :class => "navbar-brand navbar-active"} %>
+						<% else %>
+						<%= link_to 'Druify', root_path, { :class => "navbar-brand"} %>
+						<% end %>
+					</div>
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<% if params[:controller] == 'projects' %>
+							<li><%= link_to 'Projects', projects_path, {:class => 'navbar-active'} %></li>
+							<% else %>
+							<li><%= link_to 'Projects', projects_path %></li>
+							<% end %>
+							<% if params[:controller] == 'posts' %>
+							<li><%= link_to 'Blog Posts', posts_path, :class => 'navbar-active' %></li>
+
+							<% else %>
+							<li><%= link_to 'Blog Posts', posts_path %></li>
+
+							<% end %>
+
+							<% if params[:controller] == 'accounts' %>
+							<li><%= link_to 'Acounts', accounts_path, {:class => 'navbar-active'} %></li>
+
+							<% else %>
+							<li><%= link_to 'Acounts', accounts_path %></li>
+
+							<% end %>
+
+							<% if params[:controller] == 'news' %>
+							<li><%= link_to 'News', news_index_path, {:class => 'navbar-active'} %></li>
+
+							<% else %>
+							<li><%= link_to 'News', news_index_path %></li>
+
+							<% end %>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div><!-- /container -->
+</div><!-- /navbar wrapper -->
+<% if params["controller"] != 'projects' %>
+<div class="container">
+	<% end %>
+
+
+	<%= yield %>
+</div>
+<footer>
+	<div class="footer-shaded">
+		<p class="pull-right"><a href="#">Back to top</a></p>
+
+		<address>
+			<strong>Drew Wetherington</strong><br>
+			<abbr title="Phone">P: </abbr>(314) 775-9588<br>
+			<abbr title="Email">E: </abbr>Dgwetherington@gmail.com
+		</address>
+
+		<div>
+			<% if current_user == nil %>
+			<%= link_to 'CMS Login', new_user_session_path %>
+			<% else %>
+			Logged in as <%= link_to current_user.email, edit_user_registration_path %>
+			<% end %>
+
+		</div>
+	</footer>
+
+	<script>
 	$(document).ready(function(){
-		var bg = "<%= @bg %>"
-		if (bg == "awesome") {
-			var t = new Trianglify({noiseIntensity: 0, strokeOpacity: Math.random(), fillOpacity: Math.random()});
-			var pattern = t.generate(window.innerWidth, window.innerHeight);
-			$('body').css({"background": pattern.dataUrl + " no-repeat center center fixed", "background-size": "cover"} );
-		}
-	});
-</script>
+
+		var t = new Trianglify({noiseIntensity: 0, strokeOpacity: 0.1, fillOpacity: Math.random()});
+		var pattern = t.generate(window.innerWidth, window.innerHeight);
+		$('#showcase').css({"background": "#ddd"});
+		$('.item').css({"background": pattern.dataUrl + " no-repeat center center fixed", "background-size": "cover"} );
+	})
+	</script>
+
 </body>
 </html>

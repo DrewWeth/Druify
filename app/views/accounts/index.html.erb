@@ -1,12 +1,12 @@
-<h1>Listing accounts</h1>
+<h1>Accounts</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Username</th>
       <th>Site</th>
-      <th>Url</th>
-      <th>Desc</th>
+      <th>Link</th>
+      <th>Description</th>
     </tr>
   </thead>
 
@@ -15,7 +15,7 @@
       <tr>
         <td><%= account.username %></td>
         <td><%= account.host %></td>
-        <td><a href="<%= account.url %>"><%= account.url %></a></td>
+        <td><%= link_to account.url, account.url %></td>
         <td><%= account.desc %></td>
         <% if @is_admin %>
         <td><%= link_to 'Show', account %></td>
