@@ -26,9 +26,11 @@
 
 
   <% end %>
-  <% (3 - (@projects.size) % 3).times do %>
+  <% if @projects.size % 3 != 0 %>
+      <% (3 - (@projects.size) % 3).times do %>
     <div class="col-sm-4 img-showcase" style="background: url('<%= asset_path @projects.sample.img %>') no-repeat center center;   background-size: cover;">
 
+    <% end %>
   <% end %>
 </div>
 
