@@ -1,12 +1,13 @@
 <center><h1 style="font-weight:200">Projects</h1></center>
 <div class="row projects_showcase">
   <% @projects.each_with_index do |project, index| %>
-    <div class="col-sm-4">
-      <img class="img-showcase img-responsive" alt="<%= project.name %>" src="<%= asset_path project.img %>"></img>
-      <div class="contenthover">
-          <h3><%= project.name %></h3>
+    <div class="col-sm-4 col-showcase" style="background: url('<%= asset_path project.img %>') no-repeat center center;background-size:cover;">
+      <!-- <img class="img-showcase img-responsive" alt="<%= project.name %>" src="<%= asset_path project.img %>"></img> -->
+
+      <div class="contenthover text-shadow">
+          <a href="<%= project.url %>"><h3><%= project.name %></h3></a>
           <p><%= project.desc %></p>
-      </div>
+    </div>
 
       <% if @is_admin %>
         <br>
@@ -17,8 +18,13 @@
     </div>
     <% if (index+1) % 3 == 0 %>
       </div>
+
       <div class="row projects_showcase">
     <% end %>
+  <% end %>
+  <% (3 - (@projects.size % 3)).times do %>
+    <div class="col-sm-4 col-showcase" style="background-image: url('<%= asset_path @projects.sample.img %>')">
+
   <% end %>
 </div>
 

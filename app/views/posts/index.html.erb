@@ -1,13 +1,15 @@
+<div style='margin-top:30px'></div>
 <div class="row">
   <div class="col-sm-9">
     <div id ="story">
       <% @story.each do |p| %>
 
-        <%= link_to p["title"], p["url"] %>
 
-        <span class="pull-right"><%= p["updated"] %></span>
+        <img style="margin:5px" class="img-circle" src="<%= p["author"]["image"]["url"] %>"><%= link_to p["title"], p["url"], :style => 'font-size:200%' %>
+
+
         <%= p["content"].html_safe %>
-
+        <small class="pull-right"><%= p["updated"] %></small>
         <hr>
       <% end %>
     </div>
