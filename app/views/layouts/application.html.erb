@@ -6,7 +6,8 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 	<%= csrf_meta_tags %>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0">
+
 
 	<!-- <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative' rel='stylesheet' type='text/css'> -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -25,7 +26,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</a>
-					<div id="mobile-id">
+					<div id="mobile-id" class="stand-out">
 						<%= link_to params[:controller].capitalize, '#', { :class => "navbar-brand navbar-active"} %>
 					</div>
 				</div>
