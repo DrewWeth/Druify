@@ -1,48 +1,27 @@
-<!-- Carousel
-================================================== -->
+<div class="center-feature">
 
-<!-- /.carousel -->
+  <% @news.each do |news| %>
+  <div class="news-article" style="position:relative;margin:80px 0">
+    <div class="length-limit">
+      <center>
+        <h3 style="display:inline"><%= link_to news.title, news_with_title_path(news, :title=>news.title.tr(' ', '_')) %></h3>
 
+        <div style="margin-top:20px"><%= news.updated_at.localtime.strftime("%b %d, %Y") %></div>
+      </center>
+      <p style="padding-top:20px"><%= news.content.html_safe %></p>
 
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-
-<div id="content" class="container marketing">
-  <!-- Three columns of text below the carousel -->
-  <!-- <div class="row" id="showcase">
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>Mobile-first</h2>
-      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
+      <div class="fadeout"></div>
     </div>
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>One Fluid Grid</h2>
-      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-    <div class="col-md-4 text-center">
-      <img class="img-circle" src="http://placehold.it/140x140">
-      <h2>LESS is More</h2>
-      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#">View details »</a></p>
-    </div>
-  </div><!-- /.row -->
 
-  <!-- START THE FEATURETTES -->
-  <% @news.each do |n| %>
-
-
-  <div class="featurette">
-    <!-- <img class="featurette-image img-circle pull-right" src="http://placehold.it/512"> -->
-    <h2 class="featurette-heading"><%= n.title %></h2>
-    <p class="lead"><%= n.content.html_safe %></p>
+    <% if @is_admin %>
+    <%= news.archived %>
+    <%= link_to 'Edit', edit_news_path(news) %>
+    <% end %>
+    <%= link_to 'Continue Reading...', news_with_title_path(news, :title=>news.title.tr(' ', '_')) %>
+    <hr>
   </div>
-  <hr class="featurette-divider">
-
   <% end %>
 </div>
-
-  <!-- /END THE FEATURETTES -->
+<% if @is_admin %>
+<%= link_to 'New News', new_news_path %>
+<% end %>

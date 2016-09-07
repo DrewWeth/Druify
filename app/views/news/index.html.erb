@@ -1,16 +1,23 @@
-<center><h1 class="text-thin">News</h1></center>
-  <% @news.each do |news| %>
+<div class="center-feature">
+<center><h1 class="text-thin">Posts</h1></center>
 
-    <h3 style="display:inline"><%= news.title %></h3><span class="pull-right"><%= news.updated_at.localtime.strftime("%B %d, %Y at %I:%M %p") %></span>
-    <div style="padding-top:20px"><%= news.content.html_safe %></div>
+  <% @news.each do |news| %>
+    <div class="news-article" style="position:relative;margin:80px 0">
+    <div style="padding-right:100px">
+      <h3 style="display:inline"><%= link_to news.title, news_with_title_path(news, :title=>news.title.tr(' ', '_')) %></h3>
+    </div>
+    <div style="margin-bottom:20px" class="pull-right"><%= news.updated_at.localtime.strftime("%b %d, %Y") %></div>
+
+    <p style="padding-top:20px"><%= news.content.html_safe %></p>
 
     <% if @is_admin %>
       <%= news.archived %>
       <%= link_to 'Edit', edit_news_path(news) %>
     <% end %>
     <hr>
+    </div>
   <% end %>
-<br>
+</div>
 <% if @is_admin %>
   <%= link_to 'New News', new_news_path %>
 <% end %>

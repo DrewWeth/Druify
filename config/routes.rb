@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :templates
 
   resources :news
+  get '/news/:id/:title' => 'news#show', :as => :news_with_title
 
   root to: 'home#index'
   get 'home/resume', to: 'home#resume'
@@ -20,6 +21,12 @@ Rails.application.routes.draw do
   resources :accounts
 
   resources :projects
+
+
+  devise_scope :user do
+    get '/admin' => 'devise/sessions#new', :as => 'admin_login'
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

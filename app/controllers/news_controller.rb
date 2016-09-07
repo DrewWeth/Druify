@@ -4,7 +4,7 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @news = News.order('created_at DESC').reverse_order.take(3)
+    @news = News.where(archived:false).order('created_at DESC')
     @is_admin = is_admin
   end
 
@@ -75,20 +75,9 @@ class NewsController < ApplicationController
   end
 
   private
-    def is_admin
-      if current_user != nil and current_user.id == 1
-        return true
-      else
-        return false
-      end
-    end
 
-    def restricted
-      if !is_admin
-        redirect_to action: "index"
-        return
-      end
-    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_news
       @news = News.find(params[:id])

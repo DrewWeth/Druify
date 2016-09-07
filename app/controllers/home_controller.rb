@@ -3,16 +3,6 @@ class HomeController < ApplicationController
 	# GET /accounts.json
 	def index
 
-
-  	Instagram.configure do |config|
-		  config.client_id = "56578d4451c74ba0964665d5d7fafbed"
-		  config.client_secret = "b8e818b92dbe43f7a7725deafde83929"
-		  # For secured endpoints only
-		  #config.client_ips = '<Comma separated list of IPs>'
-		end
-
-
-
 		@news = News.where(:archived => false).take(4)
 
 		# begin

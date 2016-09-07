@@ -58,7 +58,7 @@
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="80px" viewBox="0 0 50 80" xml:space="preserve">
 						<polyline fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="
 						45.63,75.8 0.375,38.087 45.63,0.375 "/>
-					</svg>  
+					</svg>
 				</button>
 
 				<button class="arrow right" id="right-arrow">
@@ -68,10 +68,10 @@
 					</svg>
 				</button>
 				<center><h1><a style="color: #fff !important" href="<%= root_path %>">Drew Wetherington</a></h1>
-					<%= link_to 'Projects', projects_path %> 
+					<%= link_to 'Projects', projects_path %>
 
-					| <%= link_to 'Blog Posts', posts_path %> 
-					| <%= link_to 'Acounts', accounts_path %> 
+					| <%= link_to 'Blog Posts', posts_path %>
+					| <%= link_to 'Acounts', accounts_path %>
 					| <%= link_to 'News', news_index_path %>
 					| <% if current_user == nil %>
 					<%= link_to 'Login', new_user_session_path %>
@@ -111,7 +111,7 @@
 		</div>
 		<br>
 		<br>
-		Visits <%= number_with_delimiter(@count, :delimeter => ',') %>
+		Visits <%= number_with_delimiter(@utility.count, :delimeter => ',') %>
 	</div>
 </div>
 	</div>
@@ -153,9 +153,9 @@
 <script>
 	$(document).ready(function(){
 		var footer = $('#footer');
-		console.log(footer.position()); 
+		console.log(footer.position());
 		var footer_bottom = footer.position().top + footer.height();
-		var window_height = $(window).height() 
+		var window_height = $(window).height()
 		if (footer_bottom < window_height)
 		{
 			$('.background-image').css('height', footer_bottom);

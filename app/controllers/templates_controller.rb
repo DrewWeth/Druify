@@ -103,7 +103,7 @@ class TemplatesController < ApplicationController
         "linkColor" => temp.linkColor,
         "unvisitedLinkColor" => temp.unvisitedLinkColor,
         "darkClassColor" => temp.darkClassColor,
-         
+
       }
       session[:template] = temp.id
     else
@@ -115,20 +115,7 @@ class TemplatesController < ApplicationController
 
 
   private
-    def is_admin
-      if current_user != nil and current_user.id == 1
-        return true
-      else
-        return false
-      end
-    end
-
-    def restricted
-      if !is_admin
-        redirect_to action: "index"
-        return
-      end
-    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_template
       @template = Template.find(params[:id])

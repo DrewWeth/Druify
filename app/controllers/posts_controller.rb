@@ -90,20 +90,7 @@ class PostsController < ApplicationController
   end
 
   private
-    def is_admin
-      if current_user != nil and current_user.id == 1
-        return true
-      else
-        return false
-      end
-    end
-
-    def restricted
-      if !is_admin
-        redirect_to action: "index"
-        return
-      end
-    end
+    
 
 
     # Use callbacks to share common setup or constraints between actions.

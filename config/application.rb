@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'yaml'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -8,9 +8,17 @@ Bundler.require(*Rails.groups)
 
 module Druify
   class Application < Rails::Application
-    config.assets.enabled = true  
+    config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.time_zone = 'Central Time (US & Canada)'
+
+    yaml_data = YAML::load(ERB.new(IO.read(File.join(Rails.root, 'config', 'application.yml'))).result)
+    APP_CONFIG = HashWithIndifferentAccess.new(yaml_data)
+
+    Instagram.configure do |config|
+      config.client_id = APP_CONFIG[:instagram][:client_id]
+      config.client_secret = APP_CONFIG[:instagram][:client_secret]
+    end
 
 
     # Settings in config/environments/* take precedence over those specified here.

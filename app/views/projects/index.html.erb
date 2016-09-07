@@ -1,37 +1,32 @@
 <center><h1 style="font-weight:200">Projects</h1></center>
 <div class="row projects_showcase">
   <% @projects.each_with_index do |project, index| %>
-    <a href="<%= project.url %>">
-      <div class="col-sm-4 text-larger" style="padding:0px;background: url('<%= asset_path project.img %>') no-repeat center center; background-size: cover;
-  ;">
-        <img class="img-showcase" style="left:0px;display:none;height:400px;width:100%"></img>
+  <a href="<%= project.url %>">
+    <div class="col-sm-4 text-larger proj-column" style="padding:15px;">
+      <div class="img-proj">
+        <img class="responsive-img"  src="<%= asset_path project.img %>"></img>
+        <!-- <img class="img-showcase" style="position:absolute;z-index:9;padding:20px;left:0px;top:0px;display:none;height:100%;width:100%"></img> -->
         <div class="contenthover">
           <h3><%= project.name %></h3>
           <p><%= project.desc %></p>
         </div>
+      </div>
 
-        <% if @is_admin %>
-          <br>
-          <%= link_to 'Show', project %>
-          <%= link_to 'Edit', edit_project_path(project) %>
-          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </div>
-    </a>
-    <% if (index+1) % 3 == 0 %>
-      </div>
-      <div class="row projects_showcase">
-    <% end %>
+      <% if @is_admin %>
+      <br>
+      <%= link_to 'Show', project %>
+      <%= link_to 'Edit', edit_project_path(project) %>
+      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </a>
+  <% if (index+1) % 3 == 0 %>
+</div>
+<div class="row projects_showcase">
+  <% end %>
   <% end %>
 </div>
 
 <% if @is_admin %>
 <%= link_to 'New Project', new_project_path %>
 <% end %>
-
-<script>
-$('.img-showcase').contenthover({
-  overlay_background:'#000',
-  overlay_opacity:0.8
-});
-</script>

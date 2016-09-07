@@ -16,130 +16,101 @@
 
 </head>
 <body>
-	<div id="myCarousel" class="carousel slide">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="item active" style="height:400px">
-				<img src="" class="img-responsive">
-				<div class="container">
-					<div class="carousel-caption">
-						<h1 style="margin-bottom:10px"><%= @header_bg %></h1>
-						<pthis is="" an="" example="" layout="" with="" carousel="" that="" uses="" the="" bootstrap="" 3="" styles.<="" small="">
-							<h1>Drew Wetherington</h1>
-
-							<p class="text-thin">Developer & Student</p>
-								<a class="btn btn-large btn-trans" style="border-style 3px" href="<%= projects_path %>">See Projects</a></p>
-
-						</pthis></div>
+	<div class="navbar-wrapper">
+		<div class="container">
+			<div class="navbar navbar-inverse navbar-static-top" style="margin-top:30px">
+				<div class="navbar-header">
+					<a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<div id="mobile-id">
+						<%= link_to params[:controller].capitalize, '#', { :class => "navbar-brand navbar-active"} %>
 					</div>
 				</div>
-				<div class="item">
-					<img src="">
-					<div class="container">
-						<div class="carousel-caption">
-							<p class="text-thin">Read technical and personal blog posts</p>
-							<a class="btn btn-large btn-trans" href="<%= posts_path %>">Read More</a></p>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="navbar-wrapper">
-			<div class="container">
-				<div class="navbar navbar-inverse navbar-static-top">
-					<div class="navbar-header">
-						<a class="navbar-toggle" data-toggle=  "collapse" data-target=".navbar-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav stand-out">
 						<% if params[:controller] == 'home' %>
-						<%= link_to 'Home', root_path, { :class => "navbar-brand navbar-active"} %>
+						<li><%= link_to 'Home', root_path, {:class => 'navbar-active'} %></li>
 						<% else %>
-						<%= link_to 'Home', root_path, { :class => "navbar-brand"} %>
+						<li><%= link_to 'Home', root_path %></li>
 						<% end %>
-					</div>
-					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<% if params[:controller] == 'projects' %>
-							<li><%= link_to 'Projects', projects_path, {:class => 'navbar-active'} %></li>
-							<% else %>
-							<li><%= link_to 'Projects', projects_path %></li>
-							<% end %>
-							<% if params[:controller] == 'posts' %>
-							<li><%= link_to 'Blog Posts', posts_path, :class => 'navbar-active' %></li>
+						<li><%= link_to "Github <span style='width:17px' class='glyphicon glyphicon-share-alt'></span>".html_safe, 'https://github.com/DrewWeth', {:target=>"_blank"}%></li>
 
-							<% else %>
-							<li><%= link_to 'Blog Posts', posts_path %></li>
-
-							<% end %>
-
-							<% if params[:controller] == 'accounts' %>
-							<li><%= link_to 'Acounts', accounts_path, {:class => 'navbar-active'} %></li>
-
-							<% else %>
-							<li><%= link_to 'Acounts', accounts_path %></li>
-
-							<% end %>
-
-							<% if params[:controller] == 'news' %>
-							<li><%= link_to 'News', news_index_path, {:class => 'navbar-active'} %></li>
-
-							<% else %>
-							<li><%= link_to 'News', news_index_path %></li>
-
-							<% end %>
-						</ul>
-					</li>
-				</ul>
+						<!-- <% if params[:controller] == 'posts' %>
+						<li><%= link_to 'Blog Posts', posts_path, :class => 'navbar-active' %></li>
+						<% else %>
+						<li><%= link_to 'Blog Posts', posts_path %></li>
+						<% end %> -->
+						<% if params[:controller] == 'news' %>
+						<li><%= link_to 'News', news_index_path, {:class => 'navbar-active'} %></li>
+						<% else %>
+						<li><%= link_to 'News', news_index_path %></li>
+						<% end %>
+						<% if params[:controller] == 'projects' %>
+						<li><%= link_to 'Projects', projects_path, {:class => 'navbar-active'} %></li>
+						<% else %>
+						<li><%= link_to 'Projects', projects_path %></li>
+						<% end %>
+						<!-- <% if params[:controller] == 'accounts' %>
+						<li><%= link_to 'Acounts', accounts_path, {:class => 'navbar-active'} %></li>
+						<% else %>
+						<li><%= link_to 'Acounts', accounts_path %></li>
+						<% end %> -->
+						<li><%= link_to "Resume <span style='width:17px' class='glyphicon glyphicon-share-alt'></span>".html_safe, @utility.resume_link, {:target=>"_blank"}%></li>
+					</ul>
+				</div>
 			</div>
-
+		</div><!-- /container -->
+	</div>
+	<div id="variable-grayscale-background" style="background:<%= "#%06x" % (rand * 0x111111) %>;">
+	<div id="cover-space" style="height:400px">
+		<div style="height:100px"></div>
+		<div class="center-feature">
+			<div class="center white-text stand-out">
+				<img class="avatar img-circle" src="https://www.gravatar.com/avatar/20279a558cf87c62875c1142057f577d?s=120" alt="Profile picture"/>
+				<h1><%= @header_bg %></h1>
+				<h1 style="font-family: 'Lobster', cursive;">Drew Wetherington</h1>
+				<p class="text-thin">Developer & Student</p>
+			</div>
 		</div>
-	</div><!-- /container -->
-</div><!-- /navbar wrapper -->
-<% if params["controller"] != 'projects' %>
-<div class="container">
-	<% end %>
-
-
-	<%= yield %>
+	</div>
 </div>
-<footer>
-	<div class="footer-shaded">
-		<p class="pull-right"><a href="#">Back to top</a></p>
 
-		<address>
-			<strong>Drew Wetherington</strong><br>
-			<abbr title="Phone">P: </abbr>(314) 775-9588<br>
-			<abbr title="Email">E: </abbr>Dgwetherington@gmail.com
-		</address>
+	<% if params["controller"] == 'home' %>
+	<div class="container">
+		<% end %>
+		<%= yield %>
+	</div>
 
-		<div>
-			<% if current_user == nil %>
-			<%= link_to 'CMS Login', new_user_session_path %>
-			<% else %>
-			Logged in as <%= link_to current_user.email, edit_user_registration_path %>
-			<% end %>
+	<footer>
+		<div class="footer-shaded">
+			<p class="pull-right"><a href="#">Back to top</a></p>
 
-		</div>
-	</footer>
+			<address>
+				<strong>Drew Wetherington</strong><br>
+				(314) 775-9588<br>
+				Dgwetherington@gmail.com
+			</address>
 
-	<script>
-	$(document).ready(function(){
+			<div>
+				<% if current_user != nil %>
+				Logged in as <%= link_to current_user.email, edit_user_registration_path %>
+				<% end %>
 
-		var t = new Trianglify({noiseIntensity: 0, strokeOpacity: 1, fillOpacity: <%= rand(0.6..0.8) %>, x_gradient: ["#244b5d", "#682650", "#5a7328"], y_gradient: ["#090d16","#0c1220"]});
-		var pattern = t.generate(window.innerWidth, window.innerHeight);
-		$('#showcase').css({"background": "#ddd"});
-		$('.item').css({"background": pattern.dataUrl + " no-repeat center center fixed", "background-size": "cover"} );
-	})
-	</script>
+			</div>
+		</footer>
 
-</body>
-</html>
+		<script>
+		$(document).ready(function(){
+
+			var t = new Trianglify({noiseIntensity: 0, strokeOpacity: 1, fillOpacity: <%= rand(0.3..0.9) %>});
+			var pattern = t.generate(window.innerWidth, window.innerHeight);
+			$('#showcase').css({"background": "#ddd"});
+			$('#cover-space').css({"background": pattern.dataUrl + " no-repeat center center", "background-size": "cover"} );
+		})
+		</script>
+
+	</body>
+	</html>
