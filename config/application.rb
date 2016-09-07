@@ -8,8 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Druify
   class Application < Rails::Application
-    config.assets.enabled = true
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    config.serve_static_assets = true
+
+    # config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.time_zone = 'Central Time (US & Canada)'
 
     yaml_data = YAML::load(ERB.new(IO.read(File.join(Rails.root, 'config', 'application.yml'))).result)
