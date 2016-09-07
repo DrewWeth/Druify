@@ -18,4 +18,4 @@
 /log/*.log
 /tmp
 
-Gemfile.lock
+/Gemfile.lock
