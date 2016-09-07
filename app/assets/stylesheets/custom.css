@@ -277,7 +277,7 @@ html,body {
   .img-proj .contenthover {
     display:block;
     display: block;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .75);
   }
 }
 
