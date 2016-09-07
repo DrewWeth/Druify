@@ -13,6 +13,8 @@ end
 group :production do
   # Postgres for heroku
   gem 'pg'
+  gem 'rails_12factor'
+
 end
 
 gem 'httparty'
