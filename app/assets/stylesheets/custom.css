@@ -110,7 +110,7 @@ html,body {
 .navbar-static-top{
   background: transparent;
   margin-top:10px;
-  padding-left:20px;
+  /*padding-left:20px;*/
   font-size:120%;
 }
 
@@ -127,7 +127,6 @@ html,body {
   top: 0;
   left: 0;
   right: 0;
-
 }
 
 

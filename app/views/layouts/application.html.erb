@@ -18,14 +18,14 @@
 </head>
 <body>
 	<div class="navbar-wrapper">
-		<div class="container">
-			<div class="navbar navbar-inverse navbar-static-top" style="margin-top:30px">
+		<nav class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-div">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-div">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</a>
+					</button>
 					<div id="mobile-id" class="stand-out">
 						<%= link_to params[:controller].capitalize, '#', { :class => "navbar-brand navbar-active"} %>
 					</div>
@@ -62,22 +62,22 @@
 						<li><%= link_to "Resume <span style='width:17px' class='glyphicon glyphicon-share-alt'></span>".html_safe, @utility.resume_link, {:target=>"_blank"}%></li>
 					</ul>
 				</div>
-			</div>
-		</div><!-- /container -->
+			</div><!-- /container -->
+		</nav>
 	</div>
 	<div id="variable-grayscale-background" style="background:<%= "#%06x" % (rand * 0x111111) %>;">
-	<div id="cover-space" style="height:400px">
-		<div style="height:100px"></div>
-		<div class="center-feature">
-			<div class="center white-text stand-out">
-				<img class="avatar img-circle" src="https://www.gravatar.com/avatar/20279a558cf87c62875c1142057f577d?s=120" alt="Profile picture"/>
-				<h1><%= @header_bg %></h1>
-				<h1 style="font-family: 'Lobster', cursive;">Drew Wetherington</h1>
-				<p class="text-thin">Developer & Student</p>
+		<div id="cover-space" style="height:400px">
+			<div style="height:100px"></div>
+			<div class="center-feature">
+				<div class="center white-text stand-out">
+					<img class="avatar img-circle" src="https://www.gravatar.com/avatar/20279a558cf87c62875c1142057f577d?s=120" alt="Profile picture"/>
+					<h1><%= @header_bg %></h1>
+					<h1 style="font-family: 'Lobster', cursive;">Drew Wetherington</h1>
+					<p class="text-thin">Developer & Student</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 	<% if params["controller"] == 'home' %>
 	<div class="container">
