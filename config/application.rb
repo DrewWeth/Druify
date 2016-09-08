@@ -11,8 +11,11 @@ module Druify
 
     config.serve_static_assets = true
 
-    # config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.time_zone = 'Central Time (US & Canada)'
+
+
+
 
     yaml_data = YAML::load(ERB.new(IO.read(File.join(Rails.root, 'config', 'application.yml'))).result)
     APP_CONFIG = HashWithIndifferentAccess.new(yaml_data)
