@@ -6,7 +6,7 @@
       <center>
         <h3 style="display:inline"><%= link_to news.title, news_with_title_path(news, :title=>news.title.tr(' ', '_')) %></h3>
 
-        <div style="margin-top:20px"><%= news.updated_at.localtime.strftime("%b %d, %Y") %></div>
+        <div style="margin-top:20px"><%= news.created_at.localtime.strftime("%b %d, %Y") %></div>
       </center>
       <p style="padding-top:20px"><%= news.content.html_safe %></p>
 
