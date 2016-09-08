@@ -12,12 +12,13 @@
 
       <div class="fadeout"></div>
     </div>
+    <%= link_to 'Continue Reading...', news_with_title_path(news, :title=>news.title.tr(' ', '_')) %>
 
     <% if @is_admin %>
     <%= news.archived %>
     <%= link_to 'Edit', edit_news_path(news) %>
     <% end %>
-    <%= link_to 'Continue Reading...', news_with_title_path(news, :title=>news.title.tr(' ', '_')) %>
+
     <hr>
   </div>
   <% end %>
